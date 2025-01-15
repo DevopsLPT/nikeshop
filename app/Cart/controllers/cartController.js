@@ -3,13 +3,13 @@ const Product = require('../../Products/models/productModel');
 const Redis = require("ioredis");
 
 // Initialize ioredis client
-const redis = new Redis();
+// const redis = new Redis();
 //const redis = new Redis({host : 'redisdb'});
 
-// const redis = new Redis({
-//   host: 'redisdb', // Hostname của dịch vụ Redis
-//   port: 6379,      // Cổng Redis (mặc định là 6379)
-// });
+const redis = new Redis({
+  host: 'redisdb', // Hostname của dịch vụ Redis
+  port: 6379,      // Cổng Redis (mặc định là 6379)
+});
 
 exports.viewCart = async (req, res) => {
   try {
