@@ -7,8 +7,7 @@ const Redis = require('ioredis');
 //const redis = new Redis({host : 'redisdb'});
 
 const redis = new Redis({
-  host: 'redisdb', // Hostname của dịch vụ Redis
-  port: 6379,      // Cổng Redis (mặc định là 6379)
+  host: 'redis.lptdevops.website', // Hostname của dịch vụ Redis
 });
 
 const crypto = require('crypto');

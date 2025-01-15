@@ -9,6 +9,17 @@ services:
       - PrviNetwork
     volumes:
       - redis_data:/data
+    labels:
+      - "traefik.http.routers.redis-secure.rule=Host(`redis.lptdevops.website`)"
+      - "traefik.http.routers.redis-secure.entrypoints=websecure"
+      - "traefik.http.routers.redis-secure.tls=true"
+      - "traefik.http.routers.redis-secure.tls.certresolver=leresolver"
+
+      - "traefik.http.routers.redis.rule=Host(`redis.lptdevops.website`)"
+      - "traefik.http.routers.redis.entrypoints=web"
+      - "traefik.http.routers.redis.middlewares=redirect-to-https"
+
+      - "traefik.http.services.redis.loadbalancer.server.port=6379"
 
   nike_shopping:
     image: thien19012004/nike_shopping:latest
