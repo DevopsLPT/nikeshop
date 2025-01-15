@@ -1,0 +1,20 @@
+# Bỏ qua tất cả các tệp trong thư mục node_modules
+node_modules/
+
+# Bỏ qua tệp cấu hình môi trường
+.env
+
+# Bỏ qua các tệp log
+*.log
+
+# Bỏ qua thư mục build
+build/
+dist/
+
+# Bỏ qua các tệp tạm thời
+*.tmp
+*.swp
+
+# Bỏ qua tệp hệ điều hành
+.DS_Store
+Thumbs.db
